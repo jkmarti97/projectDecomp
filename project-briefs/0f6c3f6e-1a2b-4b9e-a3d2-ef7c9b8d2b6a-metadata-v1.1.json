@@ -1,0 +1,69 @@
+{
+  "request_id": "0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a",
+  "version": "v1.1",
+  "created_at": "2025-10-29T19:06:39Z",
+  "optimized_prompt": "Objective: Automate detection engineering using Anvilogic to increase coverage, standardize detection logic, and design Snowflake data tiering. Inputs: Original user request including objectives (deploy/tune Anvilogic detections, unify telemetry, MITRE alignment, Snowflake tiering). Constraints: High-level brief only, no implementation-level content, all external claims require URLs and confidence labels. Editorial note: Keep content concise; flag any unverified vendor counts. User Clarification: None.",
+  "web_search_count": 5,
+  "clarifying_question_count": 0,
+  "research_appendix": [
+    {
+      "url": "https://www.hunters.security/anvilogic-alternative",
+      "title": "Hunters - Anvilogic alternative",
+      "summary": "Competitor marketing page comparing Hunters to Anvilogic; notes capabilities but does not confirm Anvilogic detection counts.",
+      "retrieval_date": "2025-10-29T19:06:39Z",
+      "full_content": "Full page content not retrieved; summary provided by web_search tool."
+    },
+    {
+      "url": "https://www.anvilogic.com/",
+      "title": "Anvilogic - Detection-as-code",
+      "summary": "Vendor site describing detection-as-code builder, 'thousands' of prebuilt detections, agentic workbench, MITRE mapping, and integration claims.",
+      "retrieval_date": "2025-10-29T19:06:39Z",
+      "full_content": "Marketing content summary returned by web_search tool; full page content not retrieved."
+    },
+    {
+      "url": "https://www.reddit.com/r/cybersecurity/comments/15jz3j8/detection_as_code/",
+      "title": "Reddit discussion - Detection as Code",
+      "summary": "Practitioner discussion about detection-as-code; includes a commenter claiming Anvilogic relevance but not authoritative.",
+      "retrieval_date": "2025-10-29T19:06:39Z",
+      "full_content": "Reddit thread summary returned by web_search tool; full thread not retrieved."
+    },
+    {
+      "url": "https://attack.mitre.org/",
+      "title": "MITRE ATT&CK",
+      "summary": "MITRE ATT&CK authoritative framework for adversary behaviors and mapping detections to techniques.",
+      "retrieval_date": "2025-10-29T19:06:39Z",
+      "full_content": "Site overview summary returned by web_search tool; full site content not retrieved."
+    },
+    {
+      "url": "https://d3fend.mitre.org/mappings/attack-mitigations/",
+      "title": "D3FEND ATT&CK mitigations mapping",
+      "summary": "D3FEND crosswalk mapping ATT&CK mitigations to D3FEND defensive techniques.",
+      "retrieval_date": "2025-10-29T19:06:39Z",
+      "full_content": "Mapping summary returned by web_search tool; full map content not retrieved."
+    },
+    {
+      "url": "https://docs.snowflake.com/en/user-guide/tables-storage-considerations",
+      "title": "Snowflake tables & storage considerations",
+      "summary": "Snowflake guidance on table types, Time Travel, Fail-safe, TABLE_STORAGE_METRICS, and recommendations for cost-optimized table choices.",
+      "retrieval_date": "2025-10-29T19:06:39Z",
+      "full_content": "Snowflake docs summary returned by web_search tool; full docs not retrieved."
+    }
+  ],
+  "peer_review_versions": [
+    {
+      "version": "v1.0",
+      "timestamp": "2025-10-29T12:00:00Z",
+      "actor": "PeerReviewQA-v2",
+      "summary": "Peer review returned 'fail' citing potential implementation-level details and unverified claims. Reviewer output included in Research Appendix."
+    }
+  ],
+  "change_log": [
+    {
+      "timestamp": "2025-10-29T19:10:16Z",
+      "actor": "ProjectBriefer",
+      "change": "Updated brief content after peer review and populated metadata; set version to v1.1."
+    }
+  ],
+  "github_path": "project-briefs/0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a-v1.0.md",
+  "github_html_url": "https://github.com/jkmarti97/projectDecomp/blob/main/project-briefs/0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a-v1.0.md"
+}
