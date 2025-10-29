@@ -3,6 +3,7 @@ Detection Engineering Automation with Anvilogic
 
 ## Business Domain
 Security / Detection Engineering (confidence: High)
+- Evidence: "Automating Detection Engineering to Outpace Threats with Anvilogic" (Original Request)
 
 ## Original Request
 Detection Engineering Automation
@@ -110,7 +111,8 @@ Anvilogic’s product messaging centers on a detection armory, automated detecti
 
 ## Metadata & Audit
 - metadata file version: v1.0
-- metadata github_path: 
+- metadata github_path: Detection Engineering Automation with Anvilogic/ProjectBrief_Detection Engineering Automation with Anvilogic.md
+- metadata github_html_url: https://github.com/jkmarti97/projectDecomp/blob/main/Detection%20Engineering%20Automation%20with%20Anvilogic/ProjectBrief_Detection%20Engineering%20Automation%20with%20Anvilogic.md
 
 ---
 
