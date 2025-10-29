@@ -161,8 +161,10 @@ This program focuses on leverage + governance: adopt Anvilogic to accelerate det
 5. Produce a detailed Phase 1 plan (scope, timeline, success metrics, resourcing) for stakeholder approval.
 
 ## Metadata & Audit
-- metadata version: v1.0
-- GitHub path (initial create; to be updated after commit): project-briefs/0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a-v1.0.md
+- metadata version: v1.1
+- GitHub path: project-briefs/0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a-v1.0.md
+- GitHub html_url: https://github.com/jkmarti97/projectDecomp/blob/main/project-briefs/0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a-v1.0.md
+- Metadata JSON: project-briefs/0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a-metadata-v1.1.json
 
 ---
 
@@ -170,36 +172,135 @@ This program focuses on leverage + governance: adopt Anvilogic to accelerate det
 
 - https://www.hunters.security/anvilogic-alternative
   - 1-line summary: Competitor marketing page comparing Hunters to Anvilogic; notes capabilities but does not confirm Anvilogic detection counts.
-  - retrieval_date: 2025-10-29T00:00:00Z
+  - retrieval_date: 2025-10-29T19:06:39Z
   - narrative: Used to cross-check third-party comparisons and marketing positioning; no primary vendor confirmation of the 2000 detection figure.
-  - full content: See web search result summary (full page content not retrieved by tool).
+  - full content: Summary returned by web_search tool; full page content not retrieved.
 
 - https://www.anvilogic.com/
   - 1-line summary: Vendor site describing detection-as-code builder, "thousands" of prebuilt detections, agentic workbench, MITRE mapping, and integration claims.
-  - retrieval_date: 2025-10-29T00:00:00Z
+  - retrieval_date: 2025-10-29T19:06:39Z
   - narrative: Primary vendor claims used to support statements about detection-as-code, number of prebuilt detections, MITRE mappings, and integration capabilities.
-  - full content: See web search result summary (marketing content returned by web_search tool).
+  - full content: Marketing content summary returned by web_search tool; full page content not retrieved.
 
 - https://www.reddit.com/r/cybersecurity/comments/15jz3j8/detection_as_code/
   - 1-line summary: Practitioner discussion about detection-as-code; includes a commenter claiming Anvilogic relevance but not authoritative.
-  - retrieval_date: 2025-10-29T00:00:00Z
+  - retrieval_date: 2025-10-29T19:06:39Z
   - narrative: Social/forum evidence used only as secondary corroboration for community discussion of detection-as-code patterns; not used as primary proof for vendor claims.
-  - full content: See web search result summary (full Reddit thread not retrieved).
+  - full content: Reddit thread summary returned by web_search tool; full thread not retrieved.
 
 - https://attack.mitre.org/
   - 1-line summary: MITRE ATT&CK authoritative framework for adversary behaviors and mapping detections to techniques.
-  - retrieval_date: 2025-10-29T00:00:00Z
+  - retrieval_date: 2025-10-29T19:06:39Z
   - narrative: Authoritative source for ATT&CK mapping approach and justification for aligning detection lifecycle to ATT&CK.
-  - full content: See web search result summary (site overview content returned by web_search tool).
+  - full content: Site overview summary returned by web_search tool; full site content not retrieved.
 
 - https://d3fend.mitre.org/mappings/attack-mitigations/
   - 1-line summary: D3FEND crosswalk mapping ATT&CK mitigations to D3FEND defensive techniques.
-  - retrieval_date: 2025-10-29T00:00:00Z
+  - retrieval_date: 2025-10-29T19:06:39Z
   - narrative: Used to justify mapping detections to defensive techniques and to design governance artifacts for D3FEND alignment.
-  - full content: See web search result summary (map content returned by web_search tool).
+  - full content: Mapping summary returned by web_search tool; full map content not retrieved.
 
 - https://docs.snowflake.com/en/user-guide/tables-storage-considerations
   - 1-line summary: Snowflake guidance on table types, Time Travel, Fail-safe, TABLE_STORAGE_METRICS, and recommendations for cost-optimized table choices.
-  - retrieval_date: 2025-10-29T00:00:00Z
+  - retrieval_date: 2025-10-29T19:06:39Z
   - narrative: Used to support data tiering recommendations and storage-cost optimization approaches for Snowflake integration.
-  - full content: See web search result summary (Snowflake docs content returned by web_search tool).
+  - full content: Snowflake docs summary returned by web_search tool; full docs not retrieved.
+
+- ProjectBriefer_PeerReviewQA_Tool output (exact tool output):
+{
+  "review_id": "2f1b8a3e-9b2c-4c5a-8f66-7d1e4b2f3a9c",
+  "reviewer": "PeerReviewQA-v2",
+  "reviewed_document_id": "project-briefs/0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a-v1.0.md",
+  "status": "fail",
+  "score":  forty,
+  "rubric": {
+    "intent_alignment": 4,
+    "scope_appropriateness": 3,
+    "research_quality": 2,
+    "traceability": 3,
+    "no_overstep": 1,
+    "completeness": 4
+  },
+  "issues": [
+    {
+      "id": "i1",
+      "type": "TOO_DETAILED",
+      "severity": "high",
+      "location": "Implementation Notes (bottom of document)",
+      "excerpt": "- Use Kafka for ingestion, TensorFlow for models\n- Dispatch commands via OpenADR/DNP3\n- CI/CD pipeline will deploy microservices to Kubernetes",
+      "required_action": "Remove or redact tool- and deployment-level details. Replace with a high-level capability placeholder describing required non-functional or integration constraints (e.g., 'scalable streaming ingestion', 'ML model support', 'secure remote dispatch capability').",
+      "example_change": "Replace the lines with: 'Preferred technology constraints: scalable streaming ingestion; support for machine-learning forecasting; secure, auditable remote dispatch interfaces. Specific technology choices will be decided during design phase.'",
+      "acceptance_test": "Implementation Notes contains no vendor/product names, orchestration or CI/CD details, or deployment targets; only high-level capability requirements remain."
+    },
+    {
+      "id": "i2",
+      "type": "OVERSTEP",
+      "severity": "high",
+      "location": "Implementation Notes > Acceptance tests",
+      "excerpt": "\"- Acceptance tests will include end-to-end latency and accuracy tests\"",
+      "required_action": "Remove acceptance-test level detail. Acceptance criteria should remain in the Success Criteria section as measurable outcomes; testing approaches belong to the delivery plan, not the brief.",
+      "example_change": "Move testing strategy to a separate delivery or QA plan. In this brief, keep: 'Success measured by defined metrics (see Success Criteria)'.",
+      "acceptance_test": "No lines in the brief describe specific test cases, test scripts, or acceptance-test implementations."
+    },
+    {
+      "id": "i3",
+      "type": "OVERSTEP",
+      "severity": "high",
+      "location": "Implementation Notes > Developer stories",
+      "excerpt": "\"- Developer stories: As an operator, I can...\"",
+      "required_action": "Remove user story syntax and developer-level decomposition. Replace with a high-level 'Operator needs' section describing operator goals and responsibilities (non-technical).",
+      "example_change": "Replace with: 'Operator needs: real-time visibility into dispatch actions, manual override capability, alerting on anomalies.'",
+      "acceptance_test": "Brief contains no user-story formatted lines (no leading 'As a ... I can ...')."
+    },
+    {
+      "id": "i4",
+      "type": "UNVERIFIED_CLAIM",
+      "severity": "med",
+      "location": "Confidence statements with URLs / Research Appendix",
+      "excerpt": "\"Smart meter penetration is 60% in target region (https://example.gov/energy/smart-meters-report) - High\"",
+      "required_action": "Provide an authoritative, directly accessible URL (official statistics or published report) and indicate the publication date and geographic scope. If the figure is an estimate or assumption, mark it explicitly in 'Assumptions & Constraints'.",
+      "example_change": "Replace with: 'Smart meter penetration in target region is 60% (Source: [official report URL], published <date>)' or move to Assumptions and tag as 'Assumption: estimated penetration 60% (unverified)'.",
+      "acceptance_test": "Research Appendix contains ≥1 authoritative URL for the penetration claim and the Confidence label (High/Medium/Low) is justified by those sources; otherwise the claim is marked as 'Assumption'."
+    },
+    {
+      "id": "i5",
+      "type": "UNVERIFIED_CLAIM",
+      "severity": "med",
+      "location": "Confidence statements with URLs / Research Appendix",
+      "excerpt": "\"DERs can accept remote commands via DNP3 or OpenADR (https://standards.org/dnp3, https://openadr.org) - Medium\"",
+      "required_action": "Provide vendor- or region-specific evidence that the DER fleet targeted in the pilot supports those protocols, or move this to 'Assumptions' and flag as unverified until procurement/technical discovery confirms.",
+      "example_change": "Replace with: 'Assumption: target DERs support DNP3 or OpenADR; validate during procurement. (See: vendor interoperability matrix or device specs URL)'",
+      "acceptance_test": "For protocol support claims, Research Appendix includes device/vendor-specific documentation or certification that confirms DNP3/OpenADR support, or the claim is explicitly designated an assumption."
+    }
+  ],
+  "confidence": "Medium",
+  "timestamp": "2025-10-29T12:00:00Z",
+  "audit": {
+    "caller_verified": true,
+    "web_search_count": 0,
+    "extracted_overstep_snippets": [
+      "Use Kafka for ingestion, TensorFlow for models\n- Dispatch commands via OpenADR/DNP3\n- CI/CD pipeline will deploy microservices to Kubernetes",
+      "\"- Acceptance tests will include end-to-end latency and accuracy tests\"",
+      "\"- Developer stories: As an operator, I can...\""
+    ],
+    "change_log_snapshot": [
+      {
+        "file": "project-briefs/0f6c3f6e-1a2b-4b9e-a3d2-ef7c9b8d2b6a-v1.0.md",
+        "version": "v1.0",
+        "created": "2025-10-28"
+      }
+    ]
+  },
+  "escalation": null
+}
+
+Human remediation summary:
+- The brief includes all required sections (Project Title through Research Appendix), but contains implementation-level details that must be removed.
+- High-severity oversteps found in "Implementation Notes": tool/platform names (Kafka, TensorFlow, Kubernetes), CI/CD/deployment details — these must be redacted and replaced with high-level capability statements.
+- Acceptance-test and developer-story content appears in the brief; move testing specifics and user stories to delivery/QA and backlog artifacts respectively.
+- Two external claims (smart meter 60% penetration; DER protocol support) are present but not verifiable from the included placeholder URLs. Either supply authoritative URLs and publication details, or mark them explicitly as Assumptions.
+- Suggested sanitized replacements: short capability statements (e.g., "scalable streaming ingestion", "ML forecasting capability", "secure, auditable dispatch interfaces") and an "Operator needs" paragraph instead of user stories.
+- Acceptance tests for remediation: Implementation Notes contains no CI/CD, platform/tool names, test scripts, or user-story formatted lines; Research Appendix must include authoritative URLs for each external factual claim or the claim is moved to Assumptions with 'UNVERIFIED' confidence.
+- After edits, run a quick pass to ensure no code snippets, Gherkin, API schemas, test scripts, or developer acceptance tests remain.
+
+Next step: Remove/redact the Implementation Notes block and developer stories, replace them with high-level capability statements, and either add authoritative source URLs for the two confidence claims or mark them as Assumptions.
