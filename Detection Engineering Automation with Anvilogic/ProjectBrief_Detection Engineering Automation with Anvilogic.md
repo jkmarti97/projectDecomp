@@ -1,133 +1,76 @@
-# Project Title
-Detection Engineering Automation with Anvilogic
-
-## Business Domain
-Security / Detection Engineering (confidence: High)
-- Evidence: "Automating Detection Engineering to Outpace Threats with Anvilogic" (Original Request)
-
-## Original Request
-Detection Engineering Automation
-Automating Detection Engineering to Outpace Threats with Anvilogic
-
-    Leverage Anvilogic's detection-as-code platform to hyperscal and streamline threat engineering detection.
-    Core Objectives:
-        Solve detection coverage issues with the ~2000 out-of-the-box detections provided by Anvilogic.
-        Unify security telemetry across existing cyber tools.
-        Establish a governed, MITRE-aligned (ATT&CK and D3FEND) detection lifecycle.
-        Build foundation for future Snowflake intragration to optimize costs and data quality with a data tiering strategy.
-
-## Executive Summary
-Implement an automated detection engineering program using Anvilogic to increase detection coverage, unify telemetry across existing tooling, establish a governed MITRE-aligned detection lifecycle, and lay the groundwork for future Snowflake integration and data tiering to reduce costs and improve data quality.
-
-## Background & Context
-- The request aims to operationalize detection engineering using Anvilogic’s platform and detection content.
-- Target outcomes include closing detection coverage gaps, standardizing detection lifecycle practices, and preparing for Snowflake-based analytics and storage.
-- The user states an expectation of ~2000 out-of-the-box detections from Anvilogic (see Original Request).
-
-## Objectives
-- Increase measurable MITRE ATT&CK technique coverage to at least 75% (measurement: Anvilogic coverage scoring).
-- Achieve unified ingestion and normalization for top telemetry sources (logs, endpoints, cloud) with 90% normalization rate (measurement: ingestion/parser reports).
-- Implement a governed detection lifecycle (detect→test→deploy→monitor→retire) with versioning and auditability for 100% of new/modified detections (measurement: detection metadata and audit logs).
-- Prepare Snowflake integration readiness (data tiering design and PoC data pipelines) to enable at least 30% storage cost reduction vs current hot-store usage (measurement: cost model comparison).
-
-## Scope
-In‑Scope
-- Evaluate and onboard Anvilogic detection armory and detection lifecycle features.
-- Map existing detections and telemetry to MITRE ATT&CK via Anvilogic tooling.
-- Implement normalized telemetry ingestion for prioritized data sources and enable cross-platform detection translation (SPL/KQL/SQL) where feasible.
-- Define governance, ownership, and versioning processes for detection-as-code artifacts.
-- Design a Snowflake readiness plan and data tiering strategy (PoC scope only).
-
-Out‑Of‑Scope
-- Full Snowflake migration or broad data platform re-architecture (only PoC/design).
-- Detailed implementation-level engineering, deployment pipelines, or code changes beyond detection definitions and lifecycle configuration.
-- Writing production acceptance tests or creating runbooks for every detection.
-
-## Key Stakeholders / Roles
-- Project Sponsor: Security/CTO office (owner: executive sponsor)
-- Detection Engineering Lead: owns detection content migration and MITRE mapping
-- Security Engineering / Platform Owner: owns telemetry ingestion and normalization
-- Data Architect (Snowflake readiness): owns PoC design and cost model
-- SOC/Alerting Owner: owns detection tuning, alerting thresholds, and triage playbooks
-- Compliance/Governance: owns policy alignment and audit requirements
-
-## Success Criteria
-- MITRE Technique Coverage: >=75% coverage measured by Anvilogic’s coverage score across prioritized telemetry (measurement: Anvilogic coverage report; owner: Detection Engineering Lead).
-- Telemetry Normalization: >=90% normalization for prioritized sources (measurement: ingestion/parsing reports; owner: Security Engineering).
-- Detection Lifecycle Governance: 100% of new/modified detections stored with versioning, metadata, and automated deployment pipelines managed in Anvilogic (measurement: detection metadata and audit logs; owner: Detection Engineering Lead).
-- Snowflake Readiness: Data tiering PoC demonstrates >=30% reduction in projected storage/compute cost for cold-tier vs current hot-store usage (measurement: cost model comparison; owner: Data Architect).
-
-## Assumptions & Constraints
-- Assumes organization can provide access to telemetry sources and sample data feeds during onboarding.
-- Assumes Anvilogic SaaS access and required connectors are available or can be provisioned.
-- The exact count of out-of-the-box detections ("~2000") is not confirmed and is treated as UNVERIFIED in research.
-- D3FEND mapping is not confirmed available in vendor documentation and is treated as UNVERIFIED.
-- No production Snowflake migration is included; only design/PoC.
-
-## Top Risks
-- Risk: Detection coverage shortfall vs expectation
-  - Likelihood: Medium
-  - Impact: High
-  - Mitigation: Baseline coverage assessment, prioritize critical MITRE techniques, supplement with custom detections; Owner: Detection Engineering Lead
-- Risk: Telemetry gaps or normalization blockers
-  - Likelihood: High
-  - Impact: High
-  - Mitigation: Early telemetry inventory, connectors PoC, fallback to lightweight parsers; Owner: Security Engineering
-- Risk: Governance & change control not adopted
-  - Likelihood: Medium
-  - Impact: Medium
-  - Mitigation: Define simple policy, assign owners, use Anvilogic versioning and audit features; Owner: Compliance/Governance
-- Risk: Snowflake cost/scope exceeds PoC assumptions
-  - Likelihood: Medium
-  - Impact: Medium
-  - Mitigation: Conservative cost model, phased tiering plan, stop-gap retention policies; Owner: Data Architect
-
-## Confidence Statements for Major Claims
-- Claim: Anvilogic provides a detection armory, detection lifecycle automation (detection-as-code capabilities), and MITRE ATT&CK mapping.
-  - Confidence: High
-  - Sources:
-    - https://www.anvilogic.com/solution-guide-detect
-    - https://www.anvilogic.com/solution-guide-unify
-
-- Claim: Anvilogic supports Snowflake and can generate SQL for Snowflake as a target platform.
-  - Confidence: High
-  - Sources:
-    - https://www.anvilogic.com/solution-guide-unify
-    - https://www.anvilogic.com/solution-guide-detect
-
-- Claim: Vendor marketing and press mention "thousands" of curated threat scenarios but the specific figure "~2000 out-of-the-box detections" is not confirmed.
-  - Confidence: UNVERIFIED
-  - Sources:
-    - https://finance.yahoo.com/news/anvilogic-closes-45m-series-c-130000150.html
-    - https://www.anvilogic.com/solution-guide-unify
-
-- Claim: Anvilogic documents "over 800 Snowflake detections" (vendor statement).
-  - Confidence: Medium
-  - Source:
-    - https://www.anvilogic.com/solution-guide-unify
-
-## Rationale
-Anvilogic’s product messaging centers on a detection armory, automated detection lifecycle management, MITRE ATT&CK mapping, and multi-platform translation (SPL/KQL/SQL). The program focuses on adopting those capabilities to close coverage gaps, unify telemetry, and prepare for Snowflake-based cost optimizations.
-
-## Metadata & Audit
-- metadata file version: v1.0
-- metadata github_path: Detection Engineering Automation with Anvilogic/ProjectBrief_Detection Engineering Automation with Anvilogic.md
-- metadata github_html_url: https://github.com/jkmarti97/projectDecomp/blob/main/Detection%20Engineering%20Automation%20with%20Anvilogic/ProjectBrief_Detection%20Engineering%20Automation%20with%20Anvilogic.md
-
----
-
-## Research Appendix
-- https://finance.yahoo.com/news/anvilogic-closes-45m-series-c-130000150.html
-  - 1-line summary: Press/news article summarizing Anvilogic Series C and describing product as providing "thousands of curated threat scenarios" and AI-assisted detection engineering features.
-  - retrieval_date: 2025-10-29T16:56:53.322-04:00
-  - narrative: Supports vendor capability claims (large detection library, AI features). Used to corroborate vendor messaging where vendor pages are present. Full content from web_search tool: "The press release announces Anvilogic's $45M Series C and highlights its AI-based multi-data platform for security operations. Relevant points: Anvilogic helps organizations adopt security data lakes alongside existing SIEMs to reduce cost and close detection gaps. It offers a modular detection engine, a SOC copilot (detection engineering copilot) using generative AI, and \"thousands of curated threat scenarios\" to improve detection coverage. The text does not state a specific figure of ~2000 out-of-the-box detections, nor does it use the term \"detection-as-code.\""
-
-- https://www.anvilogic.com/solution-guide-detect
-  - 1-line summary: Vendor solution guide describing detection lifecycle, detection armory, MITRE mapping, and cross-platform query generation (SPL/KQL/SQL); contains detection-as-code imagery and features.
-  - retrieval_date: 2025-10-29T16:56:53.322-04:00
-  - narrative: Primary vendor source for detection-as-code claims, MITRE ATT&CK integration, and lifecycle automation. Full content from web_search tool: "- Anvilogic describes a SaaS platform for detection engineering with automated detection lifecycle management, one‑click deploy, a Detection Armory (large, regularly updated repository of ready‑to‑deploy detections), low‑code detection builder, and AI-assisted triage/hunting.\n\n- MITRE ATT&CK: The page explicitly references MITRE ATT&CK multiple times — automated MITRE mapping, measurable technique coverage and gap analysis, \"Enhance your defense against MITRE ATT&CK TTPs with quantifiable coverage scores,\" and MITRE-based maturity/coverage scoring.\n\n- Snowflake: Snowflake is listed among supported data platforms (\"Snowflake (AWS, Azure, GCP)\") and the product says it can generate SQL (alongside SPL and KQL) for multiple platforms, enabling detections across Splunk, Snowflake, and Azure.\n\n- Detection-as-code: The site uses detection lifecycle, deployment, versioning, and automation language (detection content/armory, version control, automated maintenance, deploy/clone/modify detections). An architecture image filename in the content includes \"DaC\" (Anvilogic DaC), indicating detection-as-code concepts are part of the product messaging.\n\n- D3FEND: The provided content does not mention D3FEND.\n\n- Relevant product capabilities that support claims about detection-as-code / MITRE / Snowflake integration: detection repository updated weekly, automated MITRE mapping and scoring, cross‑platform translation to SPL/SQL/KQL, end‑to‑end lifecycle automation (versioning, tuning insights, deployments), and explicit support for Snowflake in the integrations list."
-
-- https://www.anvilogic.com/solution-guide-unify
-  - 1-line summary: Vendor solution guide describing unification of telemetry, Snowflake/Databricks connectors, repository of detections (noting ~800 Snowflake detections), and cross-platform detection translation and AI features.
-  - retrieval_date: 2025-10-29T16:56:53.322-04:00
-  - narrative: Primary vendor source for Snowflake support, telemetry unification, and stated counts for Snowflake-specific detection content. Full content from web_search tool: "- Anvilogic solution guide highlights capabilities relevant to detection-as-code, MITRE ATT&CK coverage, and Snowflake integration:\n\n- Snowflake/Databricks integration\n  - Ready-to-use connectors for Snowflake and Databricks; supports AWS/Azure/GCP.\n  - Repository of detections (stated as over 800 Snowflake detections, updated weekly) deployable where data resides.\n  - Uses Snowflake/Databricks to “illuminate dark data” and lower storage/compute cost (claim: ~80% less than Splunk).\n\n- Detection content and detection-as-code capabilities\n  - Detection Content (Anvilogic Armory): large, regularly updated library of detections in SPL, KQL, and SQL; daily/weekly updates and premium packs.\n  - Detection Creation: low-code detection builder, import/standardize existing rules, automated generation of SPL/KQL/SQL from natural language, machine learning recommendations, and testing documentation.\n  - Detection Management: automated end-to-end lifecycle management, versioning & audit history, cloning/modifying/deploying detections, parsing/normalization code management.\n\n- MITRE ATT&CK integration and coverage\n  - Detections are enriched with metadata mapping to TTPs and threat actor groups.\n  - Automated MITRE mapping and risk-based scoring for saved searches and scenarios.\n  - Continuous maturity scoring includes measurable technique coverage and gap analysis based on MITRE ATT&CK.\n\n- Additional relevant capabilities\n  - Detection correlation across multiple data platforms (Splunk, Snowflake, Azure) and automatic translation between query languages (SPL, SQL, KQL).\n  - AI-assisted features: Monte Copilot for triage and SQL generation; AI Recommendation Engine to suggest TTPs and detections based on available data feeds.\n\n- Items not present in the provided content\n  - The provided text does not mention D3FEND or any D3FEND-specific mappings or integrations."
+IyBQcm9qZWN0IFRpdGxlCkRldGVjdGlvbiBFbmdpbmVlcmluZyBBdXRvbWF0
+aW9uIHdpdGggQW52aWxvZ2ljCgojIyBCdXNpbmVzcyBEb21haW4KU2VjdXJp
+dHkgLyBEZXRlY3Rpb24gRW5naW5lZXJpbmcgKGNvbmZpZGVuY2U6IEhpZ2gp
+Ci0gRXZpZGVuY2U6ICJBdXRvbWF0aW5nIERldGVjdGlvbiBFbmdpbmVlcmlu
+ZyB0byBPdXRwYWNlIFRocmVhdHMgd2l0aCBBbnZpbG9naWMiIChPcmlnaW5h
+bCBSZXF1ZXN0KQoKIyMgT3JpZ2luYWwgUmVxdWVzdApEZXRlY3Rpb24gRW5n
+aW5lZXJpbmcgQXV0b21hdGlvbgpBdXRvbWF0aW5nIERldGVjdGlvbiBFbmdp
+bmVlcmluZyB0byBPdXRwYWNlIFRocmVhdHMgd2l0aCBBbnZpbG9naWMKCiAg
+ICBMZXZlcmFnZSBBbnZpbG9naWMncyBkZXRlY3Rpb24tYXMtY29kZSBwbGF0
+Zm9ybSB0byBoeXBlcnNjYWwgYW5kIHN0cmVhbWxpbmUgdGhyZWF0IGVuZ2lu
+ZWVyaW5nIGRldGVjdGlvbi4KICAgIENvcmUgT2JqZWN0aXZlczoKICAgICAg
+ICBTb2x2ZSBkZXRlY3Rpb24gY292ZXJhZ2UgaXNzdWVzIHdpdGggdGhlIH4y
+MDAwIG91dC1vZi10aGUtYm94IGRldGVjdGlvbnMgcHJvdmlkZWQgYnkgQW52
+aWxvZ2ljLgogICAgICAgIFVuaWZ5IHNlY3VyaXR5IHRlbGVtZXRyeSBhY3Jv
+c3MgZXhpc3RpbmcgY3liZXIgdG9vbHMuCiAgICAgICAgRXN0YWJsaXNoIGEg
+Z292ZXJuZWQsIE1JVFJFLWFsaWduZWQgKEFUVCZDSyBhbmQgRDNGRU5EKSBk
+ZXRlY3Rpb24gbGlmZWN5Y2xlLgogICAgICAgIEJ1aWxkIGZvdW5kYXRpb24g
+Zm9yIGZ1dHVyZSBTbm93Zmxha2UgaW50cmFncmF0aW9uIHRvIG9wdGltaXpl
+IGNvc3RzIGFuZCBkYXRhIHF1YWxpdHkgd2l0aCBhIGRhdGEgdGllcmluZyBz
+dHJhdGVneS4KCiMjIEV4ZWN1dGl2ZSBTdW1tYXJ5CkltcGxlbWVudCBhbiBh
+dXRvbWF0ZWQgZGV0ZWN0aW9uIGVuZ2luZWVyaW5nIHByb2dyYW0gdXNpbmcg
+QW52aWxvZ2ljIHRvIGluY3JlYXNlIGRldGVjdGlvbiBjb3ZlcmFnZSwgdW5p
+ZnkgdGVsZW1ldHJ5IGFjcm9zcyBleGlzdGluZyB0b29saW5nLCBlc3RhYmxp
+c2ggYSBnb3Zlcm5lZCBNSVRSRS1hbGlnbmVkIGRldGVjdGlvbiBsaWZlY3lj
+bGUsIGFuZCBsYXkgdGhlIGdyb3VuZHdvcmsgZm9yIGZ1dHVyZSBTbm93Zmxh
+a2UgaW50ZWdyYXRpb24gYW5kIGRhdGEgdGllcmluZyB0byByZWR1Y2UgY29z
+dHMgYW5kIGltcHJvdmUgZGF0YSBxdWFsaXR5LgoKIyMgQmFja2dyb3VuZCAm
+IENvbnRleHQKLSBUaGUgcmVxdWVzdCBhaW1zIHRvIG9wZXJhdGlvbmFsaXpl
+IGRldGVjdGlvbiBlbmdpbmVlcmluZyB1c2luZyBBbnZpbG9naWPigJlzIHBs
+YXRmb3JtIGFuZCBkZXRlY3Rpb24gY29udGVudC4KLSBUYXJnZXQgb3V0Y29t
+ZXMgaW5jbHVkZSBjbG9zaW5nIGRldGVjdGlvbiBjb3ZlcmFnZSBnYXBzLCBz
+dGFuZGFyZGl6aW5nIGRldGVjdGlvbiBsaWZlY3ljbGUgcHJhY3RpY2VzLCBh
+bmQgcHJlcGFyaW5nIGZvciBTbm93Zmxha2UtYmFzZWQgYW5hbHl0aWNzIGFu
+ZCBzdG9yYWdlLgotIFRoZSB1c2VyIHN0YXRlcyBhbiBleHBlY3RhdGlvbiBv
+ZiB+MjAwMCBvdXQtb2YtdGhlLWJveCBkZXRlY3Rpb25zIGZyb20gQW52aWxv
+Z2ljIChzZWUgT3JpZ2luYWwgUmVxdWVzdCkuCgojIyBPYmplY3RpdmVzCi0g
+SW5jcmVhc2UgbWVhc3VyYWJsZSBNSVRSRSBBVFQmQ0sgdGVjaG5pcXVlIGNv
+dmVyYWdlIHRvIGF0IGxlYXN0IDc1JSAobWVhc3VyZW1lbnQ6IEFudmlsb2dp
+YyBjb3ZlcmFnZSBzY29yaW5nKS4KLSBBY2hpZXZlIHVuaWZpZWQgaW5nZXN0
+aW9uIGFuZCBub3JtYWxpemF0aW9uIGZvciB0b3AgdGVsZW1ldHJ5IHNvdXJj
+ZXMgKGxvZ3MsIGVuZHBvaW50cywgY2xvdWQpIHdpdGggOTAlIG5vcm1hbGl6
+YXRpb24gcmF0ZSAobWVhc3VyZW1lbnQ6IGluZ2VzdGlvbi9wYXJzZXIgcmVw
+b3J0cykuCi0gSW1wbGVtZW50IGEgZ292ZXJuZWQgZGV0ZWN0aW9uIGxpZmVj
+eWNsZSAoZGV0ZWN04oaSdGVzdOKGkmRlcGxveeKGkm1vbml0b3LihpJyZXRp
+cmUpIHdpdGggdmVyc2lvbmluZyBhbmQgYXVkaXRhYmlsaXR5IGZvciAxMDAl
+IG9mIG5ldy9tb2RpZmllZCBkZXRlY3Rpb25zIChtZWFzdXJlbWVudDogZGV0
+ZWN0aW9uIG1ldGFkYXRhIGFuZCBhdWRpdCBsb2dzKS4KLSBQcmVwYXJlIFNu
+b3dmbGFrZSBpbnRlZ3JhdGlvbiByZWFkaW5lc3MgKGRhdGEgdGllcmluZyBk
+ZXNpZ24gYW5kIFBvQyBkYXRhIHBpcGVsaW5lcykgdG8gZW5hYmxlIGF0IGxl
+YXN0IDMwJSBzdG9yYWdlIGNvc3QgcmVkdWN0aW9uIHZzIGN1cnJlbnQgaG90
+LXN0b3JlIHVzYWdlIChtZWFzdXJlbWVudDogY29zdCBtb2RlbCBjb21wYXJp
+c29uKS4KCiMjIFNjb3BlCklu4oCRU2NvcGUKLSBFdmFsdWF0ZSBhbmQgb25i
+b2FyZCBBbnZpbG9naWMgZGV0ZWN0aW9uIGFybW9yeSBhbmQgZGV0ZWN0aW9u
+IGxpZmVjeWNsZSBmZWF0dXJlcy4KLSBNYXAgZXhpc3RpbmcgZGV0ZWN0aW9u
+cyBhbmQgdGVsZW1ldHJ5IHRvIE1JVFJFIEFUVCZDSyB2aWEgQW52aWxvZ2lj
+IHRvb2xpbmcuCi0gSW1wbGVtZW50IG5vcm1hbGl6ZWQgdGVsZW1ldHJ5IGlu
+Z2VzdGlvbiBmb3IgcHJpb3JpdGl6ZWQgZGF0YSBzb3VyY2VzIGFuZCBlbmFi
+bGUgY3Jvc3MtcGxhdGZvcm0gZGV0ZWN0aW9uIHRyYW5zbGF0aW9uIChTUEwv
+S1FML1NRTCkgd2hlcmUgZmVhc2libGUuCi0gRGVmaW5lIGdvdmVybmFuY2Us
+IG93bmVyc2hpcCwgYW5kIHZlcnNpb25pbmcgcHJvY2Vzc2VzIGZvciBkZXRl
+Y3Rpb24tYXMtY29kZSBhcnRpZmFjdHMuCi0gRGVzaWduIGEgU25vd2ZsYWtl
+IHJlYWRpbmVzcyBwbGFuIGFuZCBkYXRhIHRpZXJpbmcgc3RyYXRlZ3kgKFBv
+QyBzY29wZSBvbmx5KS4KCk91dOKAkU9m4oCRU2NvcGUKLSBGdWxsIFNub3dm
+bGFrZSBtaWdyYXRpb24gb3IgYnJvYWQgZGF0YSBwbGF0Zm9ybSByZS1hcmNo
+aXRlY3R1cmUgKG9ubHkgUG9DL2Rlc2lnbikuCi0gRGV0YWlsZWQgaW1wbGVt
+ZW50YXRpb24tbGV2ZWwgZW5naW5lZXJpbmcsIGRlcGxveW1lbnQgcGlwZWxp
+bmVzLCBvciBjb2RlIGNoYW5nZXMgYmV5b25kIGRldGVjdGlvbiBkZWZpbml0
+aW9ucyBhbmQgbGlmZWN5Y2xlIGNvbmZpZ3VyYXRpb24uCi0gV3JpdGluZyBw
+cm9kdWN0aW9uIGFjY2VwdGFuY2UgdGVzdHMgb3IgY3JlYXRpbmcgcnVuYm9v
+a3MgZm9yIGV2ZXJ5IGRldGVjdGlvbi4KCiMjIEtleSBTdGFrZWhvbGRlcnMg
+LyBSb2xlcwotIFByb2plY3QgU3BvbnNvcjogU2VjdXJpdHkvQ1RPIG9mZmlj
+ZSAob3duZXI6IGV4ZWN1dGl2ZSgc3BvbnNvcikpCi0gRGV0ZWN0aW9uIEVu
+Z2luZWVyaW5nIExlYWQ6IG93bnMgZGV0ZWN0aW9uIGNvbnRlbnQgbWlncmF0
+aW9uIGFuZCBNSVRSRSBtYXBwaW5nCi0gU2VjdXJpdHkgRW5naW5lZXJpbmcg
+LyBQbGF0Zm9ybSBPd25lcjogb3ducyB0ZWxlbWV0cnkgaW5nZXN0aW9uIGFu
+ZCBub3JtYWxpemF0aW9uCi0gRGF0YSBBcmNoaXRlY3QgKFNu b3dmbGFrZSByZWFkaW5lc3MpOiBvd25zIFBvQyBkZXNpZ24gYW5kIGNvc3QgbW9kZWwKLSBTT0MvQWxlcnRpbmcgT3duZXI6IG93bnMgZGV0ZWN0aW9uIHR1bmluZywK
