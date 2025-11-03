@@ -115,6 +115,39 @@ Splunk is selected as primary to preserve existing SOC workflows and leverage ex
   - narrative: Supports claims about Cribl's integration patterns and supported sources (Splunk, syslog, Kafka, etc.).
   - full content: Cribl Stream — Sources Overview (full content saved where available).
 
-
-
 - UNVERIFIED: Splunk documentation and precise integration guidance (no Splunk vendor URL retrieved in current research set). Recommended source to confirm: https://www.splunk.co
+
+## Scope Analysis
+
+### Count & Classification Level:
+1 - Portfolio Epic
+
+### Scale/Timebox
+    Rule applied: Portfolio Epic (>6 months, cross-functional, multiple teams and significant integration work)
+
+### Rationale
+    The brief describes an organization-wide consolidation of three SIEM environments with cross-functional integration (Splunk as primary SIEM, Sentinel and CrowdStrike as sub-SIEMs), Cribl-based stream routing, and a data-lake ingestion and lifecycle enforcement program; this requires multiple teams, significant platform decisions (Azure Data Lake Gen2 or Snowflake), and is expected to span multiple quarters.
+
+## Scoped Deliverable(s)
+- Title: Enterprise SIEM Consolidation and Data-Lake Integration
+  - Summary: Deliver a consolidated, Splunk‑centered enterprise SIEM with Cribl‑based stream routing, validated Microsoft Sentinel and CrowdStrike sub‑SIEM integrations, and a data‑lake ingestion and lifecycle enforcement design and implementation targeting Azure Data Lake Gen2 or Snowflake (hot (90 days), warm (365 days), cold (7 years)). The program includes a discovery/analysis phase (source inventory, cost/retention modeling, licensing and hosting decisioning, and vendor evaluation including Cribl procurement) followed by an implementation/execution phase (Cribl deployment, Splunk ingest/index/pipeline redesign, sub‑SIEM connectors, data‑lake ingestion pipelines and lifecycle enforcement, validation/testing, SOC runbook updates, training, and formal handover).
+  - Classification: Portfolio Epic
+  - Rationale for classification: This program requires multi‑quarter, cross‑team, cross‑platform engineering, vendor engagement, and SOC enablement that cannot be delivered within a single PI or by a single agile team. The scale, integrations, retention engineering, and procurement activities justify Portfolio Epic classification.
+  - Acceptance criteria:
+    - Splunk as primary SIEM: Splunk configured and documented as the authoritative primary SIEM with ingest pipelines, index mappings, and parsing/pipeline rules for all planned sources; ingest validation tests completed and recorded.
+    - Cribl evaluation & deployment: Cribl vendor evaluation and procurement completed (if chosen), and Cribl (or approved equivalent) deployed and operational, routing/transforming events prior to Splunk ingestion; baseline vs post-deployment ingest/cost metrics recorded and show agreed cost controls or reductions per business case.
+    - Sub‑SIEM integrations: Microsoft Sentinel and CrowdStrike configured as sub‑SIEMs with documented use cases, connector implementations, and validated cross‑SIEM detection/playbook behaviors where required.
+    - Data‑lake ingestion & lifecycle enforcement: Ingestion pipelines to selected platform (Azure Data Lake Gen2 or Snowflake) implemented with lifecycle policies enforcing retention tiers: hot (90 days), warm (365 days), cold (7 years); data access patterns and SOC/analytics query workflows documented and tested.
+    - Detection & performance validation: Detection fidelity tests and performance benchmarks completed, demonstrating equal or improved detection coverage and acceptable query/performance SLAs for SOC use.
+    - SOC readiness & handover: SOC runbooks/playbooks updated, training delivered to SOC staff, and formal SOC sign-off obtained for operational handover.
+    - Documentation & cost model: Architecture diagrams, runbooks, data retention policies, and a cost model (including Splunk ingestion/cost projections and Cribl impact) delivered and approved by project governance.
+- Assumptions / Dependencies:
+  - Splunk is to remain the primary SIEM and owner of core detection workflows; Sentinel and CrowdStrike will remain as sub‑SIEMs for selected detections and enrichments.
+  - Platform options under equal evaluation: Azure Data Lake Gen2 or Snowflake; final choice will be made during discovery and may alter implementation details.
+  - Retention tiers mandated and to be enforced: hot (90 days), warm (365 days), cold (7 years).
+  - Cribl vendor evaluation and procurement included in discovery; licensing, procurement approval, and capacity provisioning are required prior to deployment.
+  - Splunk hosting model (Splunk Cloud vs Splunk Enterprise/self‑managed) is undecided and will be evaluated in discovery; the hosting decision will affect architecture, operations, and timelines.
+    - Source coverage, ownership, feed access, credentials, and schema documentation are not yet confirmed and are required inputs discovered during discovery.
+    - Representative test data and detection/use‑case owners must be available for validation and detection‑fidelity testing.
+    - Regulatory/compliance requirements and retention obligations will be provided by legal/compliance teams and may impose additional constraints.
+    - No timeline constraints were specified; schedule and resourcing will be defined during planning following discovery and funding approval.
