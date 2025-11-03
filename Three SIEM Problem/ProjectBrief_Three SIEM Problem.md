@@ -123,10 +123,10 @@ Splunk is selected as primary to preserve existing SOC workflows and leverage ex
 1 - Portfolio Epic
 
 ### Scale/Timebox
-    Rule applied: Portfolio Epic (>6 months, cross-functional, multiple teams and significant integration work)
+Rule applied: Portfolio Epic (>6 months, cross-functional, multiple teams and significant integration work)
 
 ### Rationale
-    The brief describes an organization-wide consolidation of three SIEM environments with cross-functional integration (Splunk as primary SIEM, Sentinel and CrowdStrike as sub-SIEMs), Cribl-based stream routing, and a data-lake ingestion and lifecycle enforcement program; this requires multiple teams, significant platform decisions (Azure Data Lake Gen2 or Snowflake), and is expected to span multiple quarters.
+The brief describes an organization-wide consolidation of three SIEM environments with cross-functional integration (Splunk as primary SIEM, Sentinel and CrowdStrike as sub-SIEMs), Cribl-based stream routing, and a data-lake ingestion and lifecycle enforcement program; this requires multiple teams, significant platform decisions (Azure Data Lake Gen2 or Snowflake), and is expected to span multiple quarters.
 
 ## Scoped Deliverable(s)
 - Title: Enterprise SIEM Consolidation and Data-Lake Integration
