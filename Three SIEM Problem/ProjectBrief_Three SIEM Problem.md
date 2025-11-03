@@ -133,26 +133,6 @@ URLs retrieved during research (retrieval_date: 2025-11-03T08:58:45-05:00):
   - MITRE ATT&CK mapping to visualize coverage and help assess detection posture.
   - Threat intelligence integration to enrich detections and investigator context.
   - Watchlists to correlate customer-provided datasets (e.g., high-value assets, terminated employees) with events.
-  - Workbooks for interactive visual reporting and built-in templates.
-
-- Investigation and hunting
-  - Incident investigation tools with interactive entity graphs to understand scope and root cause.
-  - Hunting queries (MITRE-aligned) to proactively search data and convert hunts into detection rules/alerts.
-  - Jupyter notebooks (Azure ML workspaces) for advanced analytics, ML, custom visualizations, and integrations beyond built-in features.
-
-- Response and SOAR
-  - Automation rules to centrally manage incident handling and coordinate response scenarios.
-  - Playbooks (built on Azure Logic Apps) provide SOAR capabilities: automate and orchestrate remediation actions, integrate with systems like ServiceNow and Jira via a large connector gallery, and run on-demand or automatically when triggered by alerts/incidents.
-  - Extensible architecture for scalable automation as threats evolve.
-
-- Operations and deployment notes
-  - Microsoft Sentinel is available in the Microsoft Defender portal (recommended). Migration from the Azure portal to Defender portal is planned (transition guidance provided); changes beginning July 2025 and Azure-portal retirement guidance through July 2026.
-
-- Cost and planning
-  - The page references planning and pricing guidance (link to "Plan costs and understand Microsoft Sentinel pricing and billing") but does not provide detailed pricing on this page.
-
-- Related resources (links referenced)
-  - Onboard Microsoft Sentinel, Deployment guide, Data connectors, Custom connectors, ASIM normalization guidance, Detect threats out-of-the-box, Threat hunting, Playbooks/Logic Apps connectors, MITRE coverage, Notebooks, and Sentinel in Defender portal guidance.
 
 2) https://www.microsoft.com/en-us/security/business/siem-and-xdr/microsoft-sentinel
 - 1-line summary: Microsoft marketing overview positioning Sentinel as an AI-ready, cloud-native security platform combining SIEM, SOAR, and an integrated data lake.
@@ -163,24 +143,12 @@ URLs retrieved during research (retrieval_date: 2025-11-03T08:58:45-05:00):
 
 Microsoft Sentinel (formerly Azure Sentinel) is presented as an AI‑ready, cloud‑native security platform that includes built‑in SIEM capabilities, a unified data lake, graph‑powered visibility, and intelligent reasoning tools (MCP server).
 
-... (content truncated in this commit: full marketing page content available at URL)
-
 3) https://www.crowdstrike.com/en-us/platform/next-gen-siem/falcon-logscale/
 - 1-line summary: CrowdStrike Falcon LogScale product page describing LogScale (formerly Humio) as a high-scale, index-free log management platform optimized for real-time ingestion and search.
 - retrieval_date: 2025-11-03T08:58:45-05:00
 - narrative: Used to support claims about Falcon LogScale capabilities: index-free model, sub-second searches, compression, and retention options.
 - full content:
 ## CrowdStrike Falcon LogScale — capabilities, ingestion, and storage model
-
-**What it is**
-- Centralized log management (formerly Humio) designed for high-scale observability and security use cases. Purpose-built for large-volume, real-time log ingestion, search, retention and investigation.
-
-**Key capabilities**
-- Sub-second latency for ingestion and search (live streaming searches, live dashboards).  Emphasizes real-time detection, hunting and troubleshooting.
-- Powerful, easy-to-learn query language with free-text search, filtering, aggregation and regex support.
-- Live and historical dashboards (drill-down from charts to search results); drag-and-drop dashboard editor; marketplace of pre-built apps/dashboards.
-
-... (content truncated in this commit: full vendor page available at URL)
 
 4) https://library.humio.com/falcon-logscale-collector/log-collector-groups.html
 - 1-line summary: Falon LogScale collector groups documentation describing collector fleet management and configuration snippets.
@@ -189,10 +157,6 @@ Microsoft Sentinel (formerly Azure Sentinel) is presented as an AI‑ready, clou
 - full content:
 ### Falcon LogScale — Groups (Fleet Management) Overview
 
-- Purpose: Groups let administrators manage configurations and versions for multiple Falcon LogScale Collector instances (the fleet) via dynamic grouping and reusable configuration snippets.
-
-... (content truncated in this commit: full docs available at URL)
-
 5) https://cribl.io/
 - 1-line summary: Cribl marketing overview describing Cribl as a data engine for telemetry that centralizes routing, shaping, tiering and integrates with many vendors.
 - retrieval_date: 2025-11-03T08:58:45-05:00
@@ -200,21 +164,12 @@ Microsoft Sentinel (formerly Azure Sentinel) is presented as an AI‑ready, clou
 - full content:
 Cribl overview (from provided page):
 
-- Positioning: Cribl presents a "Data Engine for IT and Security" that centralizes control, routing, shaping, and tiering of telemetry (logs, metrics, traces) that gives organizations choice, control, flexibility, and cost savings.
-
-... (content truncated in this commit: full marketing page available at URL)
-
 6) https://docs.cribl.io/stream/sources
 - 1-line summary: Cribl Stream sources documentation listing supported sources and operational notes for persistent queues, backpressure, and Splunk-specific integrations.
 - retrieval_date: 2025-11-03T08:58:45-05:00
 - narrative: Used to support claims about Cribl's connectors (Splunk, Azure, S3, CrowdStrike), source types (push/pull/collector), and operational behavior such as persistent queues and backpressure handling.
 - full content:
 ## Cribl Stream — Sources Overview
-
-- Cribl Stream ingests continuous data from many Sources (Splunk, HTTP, Elastic Beats, Kinesis, Kafka, TCP JSON, etc.) and supports both IPv4 and IPv6.
-
-... (content truncated in this commit: full docs available at URL)
-
 
 7) Splunk search attempts (fetch failed)
 - URL attempted: (searches attempted for Splunk documentation returned no content during web_search calls)
