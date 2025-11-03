@@ -141,13 +141,13 @@ Splunk is selected as primary to preserve existing SOC workflows and leverage ex
     - Detection & performance validation: Detection fidelity tests and performance benchmarks completed, demonstrating equal or improved detection coverage and acceptable query/performance SLAs for SOC use.
     - SOC readiness & handover: SOC runbooks/playbooks updated, training delivered to SOC staff, and formal SOC sign-off obtained for operational handover.
     - Documentation & cost model: Architecture diagrams, runbooks, data retention policies, and a cost model (including Splunk ingestion/cost projections and Cribl impact) delivered and approved by project governance.
-- Assumptions / Dependencies:
-  - Splunk is to remain the primary SIEM and owner of core detection workflows; Sentinel and CrowdStrike will remain as sub‑SIEMs for selected detections and enrichments.
-  - Platform options under equal evaluation: Azure Data Lake Gen2 or Snowflake; final choice will be made during discovery and may alter implementation details.
-  - Retention tiers mandated and to be enforced: hot (90 days), warm (365 days), cold (7 years).
-  - Cribl vendor evaluation and procurement included in discovery; licensing, procurement approval, and capacity provisioning are required prior to deployment.
-  - Splunk hosting model (Splunk Cloud vs Splunk Enterprise/self‑managed) is undecided and will be evaluated in discovery; the hosting decision will affect architecture, operations, and timelines.
-    - Source coverage, ownership, feed access, credentials, and schema documentation are not yet confirmed and are required inputs discovered during discovery.
-    - Representative test data and detection/use‑case owners must be available for validation and detection‑fidelity testing.
-    - Regulatory/compliance requirements and retention obligations will be provided by legal/compliance teams and may impose additional constraints.
-    - No timeline constraints were specified; schedule and resourcing will be defined during planning following discovery and funding approval.
+  - Assumptions / Dependencies:
+    - Splunk is to remain the primary SIEM and owner of core detection workflows; Sentinel and CrowdStrike will remain as sub‑SIEMs for selected detections and enrichments.
+    - Platform options under equal evaluation: Azure Data Lake Gen2 or Snowflake; final choice will be made during discovery and may alter implementation details.
+    - Retention tiers mandated and to be enforced: hot (90 days), warm (365 days), cold (7 years).
+    - Cribl vendor evaluation and procurement included in discovery; licensing, procurement approval, and capacity provisioning are required prior to deployment.
+    - Splunk hosting model (Splunk Cloud vs Splunk Enterprise/self‑managed) is undecided and will be evaluated in discovery; the hosting decision will affect architecture, operations, and timelines.
+      - Source coverage, ownership, feed access, credentials, and schema documentation are not yet confirmed and are required inputs discovered during discovery.
+      - Representative test data and detection/use‑case owners must be available for validation and detection‑fidelity testing.
+      - Regulatory/compliance requirements and retention obligations will be provided by legal/compliance teams and may impose additional constraints.
+      - No timeline constraints were specified; schedule and resourcing will be defined during planning following discovery and funding approval.
