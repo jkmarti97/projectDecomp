@@ -79,7 +79,8 @@ This brief stays intentionally high-level to enable downstream planners to reque
 
 # Metadata & Audit
 - Metadata version: v1.0
-- Metadata JSON location (github_path): (will be updated after commit)
+- Metadata JSON location (github_path): Microsoft Security Copilot Integration - CFC/ProjectBrief_Microsoft Security Copilot Integration - CFC.md
+- GitHub HTML URL: https://github.com/jkmarti97/projectDecomp/blob/main/Microsoft%20Security%20Copilot%20Integration%20-%20CFC/ProjectBrief_Microsoft%20Security%20Copilot%20Integration%20-%20CFC.md
 
 # Research Appendix
 - Note: Web-research was attempted but the web_search tool returned rate-limit errors; no authoritative URLs were retrieved. All integration-specific claims are conservatively marked UNVERIFIED until the user provides endpoints or until web_research can retrieve Microsoft documentation.
